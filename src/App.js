@@ -100,7 +100,7 @@ const App = () => {
   const MyComponent = () => {
     const map = useMap();
 
-    map.on('dblclick', function (e) {
+    map?.on('dblclick', function (e) {
     //  console.log(e.latlng, "lan")
       const { lng, lat } = e.latlng;
       setNewPlace({
