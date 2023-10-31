@@ -13,7 +13,7 @@ import Login from './components/Login';
 const App = () => {
   const myStorage = window.localStorage;
   const [pins, setPins] = useState([]);
-  const [currentUser, setCurrentUser] = useState(myStorage.getItem("user") || null);
+  const [currentUser, setCurrentUser] = useState(myStorage.getItem("user"));
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
   const [newPlace, setNewPlace] = useState(null)
   const [title, setTitle] = useState('')
@@ -124,7 +124,7 @@ const App = () => {
 <MyComponent />
 
         {
-          pins.map((p, index) => {
+          pins?.map((p, index) => {
             return (
               <div key={index}>
                 <Marker position={[p.lat, p.long]}
